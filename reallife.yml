@@ -1,0 +1,41 @@
+# YANL aint markup language , design to be clean and easy to read
+#yml , yaml
+
+person:
+  name: &name "pedro"
+  occupation: "software developer"
+  age: !!float 7
+  gpa: !!str 3.5               #string
+  favourite_number: 3+4
+  male: true
+  flaws: null
+  hobbies:
+    - swimming
+    - movies
+    - gym
+    - cooking
+
+  movies: ["star wars", "avengers"]
+  friends: "darkvader"
+  age: 50
+  -{name: "skywalker", age 33}
+  -
+    name: "Iron man"
+    age: 45
+  Description:  the fighter for a better world
+                the fight between good and evil
+
+  Description: > improve tech skills
+                 learn new tech
+
+  signature:
+  pedro
+  Tech Lover
+  email: pedroiki@gmail.com
+id: *name       ## ancor a value
+
+Base: &base
+  vars1: value1
+
+  foo:
+    <<: *base     ## var1: value 1
