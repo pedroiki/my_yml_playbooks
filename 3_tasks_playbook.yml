@@ -1,0 +1,24 @@
+# write a playbook that install the vsftpd service on centOS and
+# copies a readme file to ftp server /var/ftp/pub directory
+
+---                                                  #start script
+- name: deploy vsftpd                                  #1ft task
+  hosts: all
+  tasks:
+     name: install vsftpd            #description
+     package:
+        name: vsftpd
+        state: latest            #package module
+  - name: enable vsftpd                                  #2nd task
+    service: name=vsftpd enable=True
+  - name: create readme file                             #3rd task
+    copy:
+     content: "welcome to server\n"
+     dest: /var/ftp/pub/README
+     force: no
+     mode: 0444
+
+
+     ...                                            #terminate script
+
+     # to play: ansible-playbook install_vsftpd.yml
