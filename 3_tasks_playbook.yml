@@ -21,4 +21,4 @@
 
      ...                                            #terminate script
 
-     # to play: ansible-playbook install_vsftpd.yml
+     # to play:#       ansible-playbook 3_tasks_playbook.yml
